@@ -32,7 +32,7 @@ const router = createBrowserRouter([
                 loader : landingLoader(queryClient)
              },
              {
-                path : "cocktail/:id",
+                path : "/cocktail/:id",
                 element : <Cocktail />,
                 loader : singleCocktailLoader(queryClient ),
                 errorElement : <SinglePageError />

@@ -57,7 +57,7 @@ const Cocktail = () => {
 
      return <Wrapper>
                  <header>
-                    <Link to="/" className="btn">Back Home</Link>
+                    <Link to="/cocktail-project" className="btn">Back Home</Link>
                     <h3>{name}</h3>
                  </header> 
 

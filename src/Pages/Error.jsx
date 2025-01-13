@@ -16,7 +16,7 @@ const Error = () => {
                     <img src={img} />
                     <h3>Ohh !</h3>
                     <p>we can't seem to find the page you are looking for</p>
-                    <Link to="/">Back Home</Link>
+                    <Link to="/cocktail-project">Back Home</Link>
                </div>
 
                </Wrapper>
