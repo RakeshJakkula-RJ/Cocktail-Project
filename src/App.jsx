@@ -7,7 +7,7 @@ import { About, Landing, HomeLayout, Cocktail , Error, NewsLetter, SinglePageErr
 import { loader as landingLoader } from "./Pages/Landing";
 import { loader as singleCocktailLoader } from "./Pages/Cocktail";
 import { action as newsletterAction } from "./Pages/NewsLetter";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query"; 
+import { QueryClient, QueryClientProvider, HydrationBoundary } from "@tanstack/react-query"; 
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
  
 const queryClient = new QueryClient({
@@ -56,8 +56,11 @@ const router = createBrowserRouter([
 
            return (
                  <QueryClientProvider client={ queryClient }>
-                        <RouterProvider router={router} /> 
-                         <ReactQueryDevtools initialIsOpen={true} />
+                     {/* Wrap with HydrationBoundary to prevent hydration errors */}
+                      <HydrationBoundary state={null}>
+                          <RouterProvider router={router} />
+                          <ReactQueryDevtools initialIsOpen={true} />
+                       </HydrationBoundary>            
                    </QueryClientProvider>
 
                )
